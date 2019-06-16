@@ -26,15 +26,6 @@ public class ValueAdapter extends RecyclerView.Adapter<ValueAdapter.MyViewHolder
         }
     }
 
-    public void update() {
-        final ValueDiffCallback diffCallback = new ValueDiffCallback(this.oldValuesList, this.valuesList);
-        final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(diffCallback);
-
-        this.valuesList.clear();
-        this.valuesList.addAll(oldValuesList);
-        diffResult.dispatchUpdatesTo(this);
-    }
-
     public ValueAdapter(List<Value> moviesList) {
         this.valuesList = moviesList;
     }
